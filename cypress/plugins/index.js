@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+
+const wp = require('@cypress/webpack-preprocessor')
+
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
@@ -17,6 +20,11 @@
  */
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
+  const options = {
+    webpackOptions: require('../../webpack.config'),
+  }
+
+  on('file:preprocessor', wp(options))
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 }
