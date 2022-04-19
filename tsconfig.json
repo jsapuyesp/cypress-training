@@ -4,7 +4,8 @@
     "module": "commonjs",
     "skipLibCheck": true,
     "strict": true,
-    "types": ["cypress"]
+    "types": ["cypress"],
+    "allowJs": true
   },
   "include": ["cypress/**/*.ts"],
   "exclude": ["node_modules/"]
